@@ -1,0 +1,18 @@
+{
+  "name": "Palangka Hub",
+  "short_name": "Palangka Hub",
+  "description": "Platform komunitas untuk warga Palangka Raya - Jual-beli barang bekas, jasa suruhan, dan info kos",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fffbf7",
+  "theme_color": "#f97316",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["lifestyle", "shopping", "social"]
+}
