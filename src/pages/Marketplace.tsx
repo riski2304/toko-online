@@ -13,7 +13,7 @@ const products = [
   {
     id: "1",
     title: "iPhone 12 Pro Max 256GB Pacific Blue",
-    price: 8500000,
+    price: 6000000,
     location: "Pahandut",
     image: "https://images.unsplash.com/photo-1605236453806-6ff36851218e?w=400&h=400&fit=crop",
     status: "available" as const,
@@ -24,9 +24,9 @@ const products = [
   {
     id: "2",
     title: "Honda Vario 125 2021 Pajak Panjang",
-    price: 15000000,
+    price: 9000000,
     location: "Yos Sudarso",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop",
+    image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/2011_Honda_Vario_Techno_CBS_110_%2820210917%29.jpg/1280px-2011_Honda_Vario_Techno_CBS_110_%2820210917%29.jpg?20220202165630",
     status: "available" as const,
     rating: 4.5,
     isVerified: true,
@@ -45,9 +45,9 @@ const products = [
   {
     id: "4",
     title: "Kulkas Samsung 2 Pintu No Frost",
-    price: 3200000,
+    price: 2100000,
     location: "Bukit Hindu",
-    image: "https://images.unsplash.com/photo-1571175443880-49e1d25b2bc5?w=400&h=400&fit=crop",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfxmCdJkNQ3uSXTiFH4AMdByBIB_o8P97SrQ&s",
     status: "available" as const,
     rating: 4.9,
     isVerified: true,
@@ -58,7 +58,7 @@ const products = [
     title: "Laptop Asus ROG Gaming",
     price: 12000000,
     location: "Panarung",
-    image: "https://images.unsplash.com/photo-1603302576837-37561b2e2302?w=400&h=400&fit=crop",
+    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpBt26hMepS3vbQ2cu41lJr0O4yKr3zWMCPQ&s",
     status: "available" as const,
     rating: 4.7,
     isVerified: true,
@@ -67,9 +67,9 @@ const products = [
   {
     id: "6",
     title: "Yamaha NMAX 2020 Low KM",
-    price: 22000000,
+    price: 17000000,
     location: "Menteng",
-    image: "https://images.unsplash.com/photo-1449426468159-d96dbf08f19f?w=400&h=400&fit=crop",
+    image: "https://www.naikmotor.com/wp-content/uploads/2019/11/IMG-20200311-WA0021.jpg",
     status: "available" as const,
     rating: 4.6,
     category: "Motor",
@@ -79,11 +79,16 @@ const products = [
 const Marketplace = () => {
   const [selectedCategory, setSelectedCategory] = useState("Semua");
   const [showAvailableOnly, setShowAvailableOnly] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const filteredProducts = products.filter((product) => {
     const categoryMatch = selectedCategory === "Semua" || product.category === selectedCategory;
     const statusMatch = !showAvailableOnly || product.status === "available";
-    return categoryMatch && statusMatch;
+    const searchMatch = searchQuery === "" || 
+      product.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      product.location.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      product.category.toLowerCase().includes(searchQuery.toLowerCase());
+    return categoryMatch && statusMatch && searchMatch;
   });
 
   return (
@@ -95,6 +100,8 @@ const Marketplace = () => {
           <Input
             placeholder="Cari barang bekas..."
             className="pl-10 h-12 rounded-xl bg-card border-border"
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
           />
           <Button variant="ghost" size="icon" className="absolute right-1 top-1/2 -translate-y-1/2">
             <Filter className="h-5 w-5" />

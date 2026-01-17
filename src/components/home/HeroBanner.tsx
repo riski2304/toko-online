@@ -1,7 +1,14 @@
 import { ArrowRight, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 export const HeroBanner = () => {
+  const navigate = useNavigate ();
+
+  const handleExplore = () => {
+    navigate("/marketplace");
+  };
+
   return (
     <section className="relative overflow-hidden gradient-hero text-primary-foreground px-4 py-8 rounded-b-3xl">
       {/* Background Pattern */}
@@ -23,7 +30,7 @@ export const HeroBanner = () => {
           Cari barang bekas, jasa, atau kos jadi lebih mudah dan terpercaya.
         </p>
 
-        <Button variant="hero" size="lg" className="bg-white text-primary hover:bg-white/90 shadow-lg">
+        <Button variant="hero" size="lg" className="bg-white text-primary hover:bg-white/90 shadow-lg" onClick={handleExplore}>
           Mulai Jelajahi
           <ArrowRight className="h-4 w-4" />
         </Button>
