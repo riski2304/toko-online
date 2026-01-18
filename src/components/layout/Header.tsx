@@ -70,9 +70,9 @@ export const Header = () => {
           <>
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg gradient-primary flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">PH</span>
+                <span className="text-primary-foreground font-bold text-sm">ML</span>
               </div>
-              <span className="font-bold text-lg">Palangka Hub</span>
+              <span className="font-bold text-lg">MarketLink</span>
             </div>
 
             <div className="flex items-center gap-2">

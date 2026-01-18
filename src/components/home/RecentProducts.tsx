@@ -7,7 +7,7 @@ const recentProducts = [
   {
     id: "1",
     title: "iPhone 12 Pro Max 256GB Pacific Blue",
-    price: 8500000,
+    price: 6000000,
     location: "Pahandut",
     image: "https://images.unsplash.com/photo-1605236453806-6ff36851218e?w=400&h=400&fit=crop",
     status: "available" as const,
@@ -18,7 +18,7 @@ const recentProducts = [
   {
     id: "2",
     title: "Honda Vario 125 2021 Pajak Panjang",
-    price: 15000000,
+    price: 9000000,
     location: "Yos Sudarso",
     image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/2011_Honda_Vario_Techno_CBS_110_%2820210917%29.jpg/1280px-2011_Honda_Vario_Techno_CBS_110_%2820210917%29.jpg?20220202165630",
     status: "available" as const,
@@ -39,7 +39,7 @@ const recentProducts = [
   {
     id: "4",
     title: "Kulkas Samsung 2 Pintu No Frost",
-    price: 3200000,
+    price: 2100000,
     location: "Bukit Hindu",
     image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfxmCdJkNQ3uSXTiFH4AMdByBIB_o8P97SrQ&s",
     status: "available" as const,

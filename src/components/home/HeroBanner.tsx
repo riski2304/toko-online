@@ -24,13 +24,17 @@ export const HeroBanner = () => {
         </div>
 
         <h1 className="text-2xl font-bold leading-tight mb-2">
-          Warga Palangka Raya!
+          Hallo!!! <br /> Warga Palangka Raya!
         </h1>
         <p className="text-base opacity-90 mb-6 leading-relaxed">
           Cari barang bekas, jasa, atau kos jadi lebih mudah dan terpercaya.
         </p>
 
-        <Button variant="hero" size="lg" className="bg-white text-primary hover:bg-white/90 shadow-lg" onClick={handleExplore}>
+        <Button 
+          size="lg" 
+          className="bg-white text-orange-600 hover:bg-gray-100 shadow-xl px-6 py-3 gap-3 font-bold tracking-wide border-2 border-white/50 rounded-full"
+          onClick={handleExplore}
+        >
           Mulai Jelajahi
           <ArrowRight className="h-4 w-4" />
         </Button>
